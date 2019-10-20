@@ -39,7 +39,7 @@ app.get("/scrape", function(req, res) {
     var $ = cheerio.load(response.data);
 
     // Now, we grab every h2 within an article tag, and do the following:
-    $("div.w-browse-clip>article.browse-clip").each(function(i, element) {
+    $("article.browse-clip").each(function(i, element) {
         // Save an empty result object
       var result = {};
 
@@ -50,6 +50,8 @@ app.get("/scrape", function(req, res) {
         .find('a.bc-title-link').attr('href');
       result.body = $(this)
         .find('p.bc-excerpt').text();
+      result.image = $(this)
+        .find('.responsive-img>picture>source').attr('srcset').split(" ", 1);
 
       // Create a new Article using the `result` object built from scraping
       db.Article.create(result)
