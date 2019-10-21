@@ -12,17 +12,6 @@ $.getJSON("/articles", function(data) {
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
     $("#articles").append(
-      //"<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>"
-     // `<h3 data-id='${data[i]._id}'>
-     //   <a href="https://cbr.com${data[i].link}" target="blank">
-     //     ${data[i].title}
-     //   </a>
-     // </h3>
-     // <p data-id='${data[i]._id}'>
-     //   ${data[i].body}
-     // </p>
-     // `
-
       `
       <div class="col s12 m10 offset-m1">
           <h4 data-id='${data[i]._id}'>
@@ -36,5 +25,22 @@ $.getJSON("/articles", function(data) {
         </div>
       `
       );
-  }
+  };
+});
+
+$("#clear-button").on("click", function() {
+  // Keep the page from reloading.
+  event.preventDefault();
+  // Need to place reload here or it won't fire.
+  location.reload();
+
+  $.ajax({
+      type: 'DELETE',
+      url: '/delete',
+      success: function(response) {
+          if (response == 'error') {
+              console.log('Err!');
+          }
+      }
+  });
 });

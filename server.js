@@ -63,9 +63,7 @@ app.get("/scrape", function(req, res) {
           console.log(err);
         });
     });
-
-    // Send a message to the client
-    res.send("Scrape Complete");
+    res.redirect("/");
   });
 });
 
@@ -117,6 +115,25 @@ app.post("/articles/:id", function(req, res) {
       // If an error occurred, send it to the client
       res.json(err);
     });
+});
+
+app.delete("/delete", function(req, res, next) {
+  db.Article.remove({}, function(err) {
+      if (err) {
+          console.log(err)
+      } else {
+          console.log("articles dropped!");
+      }
+  })
+  .then(function (dropnotes) {
+      db.Note.remove({}, function(err) {
+          if (err) {
+              console.log(err)
+          } else {
+              console.log("notes dropped!");
+          }
+      })
+  })
 });
 
 // Start the server
