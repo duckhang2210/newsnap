@@ -25,24 +25,15 @@ $.getJSON("/articles", function(data) {
 
       `
       <div class="col s12 m10 offset-m1">
-      <div class="row">
-          <div class="col m4">
-              <img class="responsive-img center" 
-              src="${data[i].image}">
-          </div>
-          <div class="col m8">
-            <h4 data-id='${data[i]._id}'>
-              <a href="https://cbr.com${data[i].link}" target="blank">
-                ${data[i].title}
-              </a>
-            </h4>
-
-            <p data-id='${data[i]._id}'>
-              ${data[i].body}
-            </p>
-          </div>
-      </div>
-  </div>
+          <h4 data-id='${data[i]._id}'>
+            <a href="https://cbr.com${data[i].link}" target="blank">
+              ${data[i].title}
+            </a>
+          </h4>
+          <p data-id='${data[i]._id}'>
+            ${data[i].body}
+          </p>
+        </div>
       `
       );
   }
