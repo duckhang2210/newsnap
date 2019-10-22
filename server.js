@@ -124,7 +124,9 @@ app.get("/scrape", function(req, res) {
 //Clear all aticles
 app.get("/delete", function(req,res) {
   Article.remove({}, function(err) {
-    res.redirect("/")
+    Note.remove({}, function(error){
+      res.redirect("/")
+    });
   });
 });
 
