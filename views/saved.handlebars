@@ -1,0 +1,41 @@
+        <h1 class="header center black-text">Saved News</h1>
+
+  <div class="row center">
+        <a href="/" class="btn-large waves-effect waves-light black">All News</a>
+        <a href="/delete" id="clear-button" class="btn-large waves-effect waves-light black">Clear News</a>
+      </div>
+            <br><br>
+
+    </div>
+  </div>
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row" id="articles">
+
+          {{#if article}}
+          {{#each article}}
+          <div class="col s12 m10 offset-m1" data-id={{this._id}}>
+          <h4 data-id={{this._id}}>
+            <a href="https://cbr.com{{this.link}}" target="blank">
+              {{this.title}}
+            </a>
+            <a data-id={{this._id}} class="delete btn-floating btn-small waves-effect waves-light grey"><i class="material-icons">clear</i></a>
+          </h4>
+          <p data-id={{this._id}}>
+            {{this.body}}
+          </p>
+        </div>
+        {{/each}}
+        {{/if}}
+      </div>
+    </div>
+    <br><br>
+  </div>
+
+
+<!--Clicked Notes Modal-->
+{{#each article}}
+    {{> notes-modal }}
+{{/each}}
