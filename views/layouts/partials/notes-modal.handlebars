@@ -3,13 +3,21 @@
       <h4>Note for {{this.title}}</h4>
         {{#if this.notes}}
             {{#each this.notes}}
-                <p>{{this.body}}</p>
+                <p>
+                    {{this.body}}
+                    <span>
+                        <a data-note-id={{this._id}} data-article-id={{this.article}} class="deleteNote btn-floating btn-small waves-effect waves-light grey">
+                            <i class="material-icons">clear</i>
+                        </a>
+                    </span>
+                </p>
+                
             {{/each}}
             {{else}}
                 <p>No notes for this article yet</p>
         {{/if}}
 
-      <h4>Add a Note</h4>
+      <h5>Add a Note</h5>
 
       <div class="row">
         <form class="col s12">     

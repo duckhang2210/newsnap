@@ -61,7 +61,6 @@ $(".deleteNote").on("click", function() {
       url: "/notes/delete/" + noteId + "/" + articleId
   }).done(function(data) {
       console.log(data)
-      $(".modalNote").modal("hide");
       window.location = "/saved"
   })
 });
