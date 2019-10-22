@@ -22,6 +22,8 @@
               {{this.title}}
             </a>
             <a data-id={{this._id}} class="delete btn-floating btn-small waves-effect waves-light grey"><i class="material-icons">clear</i></a>
+            <a data-target="modal{{this._id}}" class="comment modal-trigger btn-floating btn-small waves-effect waves-light grey"><i class="material-icons">comment</i></a>
+
           </h4>
           <p data-id={{this._id}}>
             {{this.body}}

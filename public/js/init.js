@@ -33,21 +33,20 @@ $(".delete").on("click", function() {
 //Handle Save Note button
 $(".saveNote").on("click", function() {
   var thisId = $(this).attr("data-id");
-  if (!$("#noteText" + thisId).val()) {
+  if (!$(".noteText" + thisId).val()) {
       alert("please enter a note to save")
   }else {
     $.ajax({
           method: "POST",
           url: "/notes/save/" + thisId,
           data: {
-            text: $("#noteText" + thisId).val()
+            text: $(".noteText" + thisId).val()
           }
         }).done(function(data) {
             // Log the response
             console.log(data);
             // Empty the notes section
-            $("#noteText" + thisId).val("");
-            $(".modalNote").modal("hide");
+            $(".noteText" + thisId).val("");
             window.location = "/saved"
         });
   }
@@ -65,4 +64,14 @@ $(".deleteNote").on("click", function() {
       $(".modalNote").modal("hide");
       window.location = "/saved"
   })
+});
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems, options);
+});
+
+// Or with jQuery
+
+$(document).ready(function(){
+  $('.modal').modal();
 });
