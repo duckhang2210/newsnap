@@ -18,6 +18,8 @@ $(".save").on("click", function() {
       window.location = "/"
   })
 });
+
+
 //Handle Delete Article button
 $(".delete").on("click", function() {
   var thisId = $(this).attr("data-id");

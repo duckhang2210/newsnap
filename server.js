@@ -120,6 +120,14 @@ app.get("/scrape", function(req, res) {
     res.send("scrapped")
   });
 });
+
+//Clear all aticles
+app.get("/delete", function(req,res) {
+  Article.remove({}, function(err) {
+    res.redirect("/")
+  });
+});
+
 // This will get the articles we scraped from the mongoDB
 app.get("/articles", function(req, res) {
   // Grab every doc in the Articles array
