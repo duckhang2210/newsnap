@@ -17,6 +17,12 @@
           {{#if article}}
           {{#each article}}
           <div class="col s12 m10 offset-m1" data-id={{this._id}}>
+            <div class="row">
+              <div class="col m4">
+                <img src="{{this.images}}" class="responsive-img">
+              </div>
+              <div class="col m8">
+
           <h4 data-id={{this._id}}>
             <a href="https://cbr.com{{this.link}}" target="blank">
               {{this.title}}
@@ -31,6 +37,8 @@
             {{this.body}}
           </p>
         </div>
+            </div>
+          </div>
         {{/each}}
         {{/if}}
       </div>

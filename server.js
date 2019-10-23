@@ -78,8 +78,9 @@ app.get("/saved", function(req, res) {
     Article.find().count({"saved": true}, function(err, dataSaved) {
       var hbsObject = {
         article: articles,
-        savedArticle: dataSaved
+        savedArticle: dataSaved,
       };
+      console.log(articles)
     res.render("saved", hbsObject);
     });
   });
@@ -105,6 +106,8 @@ app.get("/scrape", function(req, res) {
         .find('a.bc-title-link').attr('href');
       result.body = $(element)
         .find('p.bc-excerpt').text();
+      result.images = $(element)
+        .find('picture').children("source").attr("data-srcset");
 
       // Create a new Article using the `result` object built from scraping
       Article.create(result)

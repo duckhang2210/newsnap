@@ -8,7 +8,8 @@ var Schema = mongoose.Schema;
 var ArticleSchema = new Schema({
   title: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   body: {
     type: String,
@@ -21,6 +22,10 @@ var ArticleSchema = new Schema({
   saved: {
     type: Boolean,
     default: false
+  },
+  images: {
+    type: String,
+    required: true
   },
   notes: [{
      type: Schema.Types.ObjectId,
