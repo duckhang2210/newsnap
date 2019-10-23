@@ -41,8 +41,9 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/scrapping", { useNewUrlParser: true });
-//mongoose.connect("mongodb://localhost/mongoscraper");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapping";
+//mongoose.connect("mongodb://localhost/scrapping", { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI);
 var db = mongoose.connection;
 
 // Show any mongoose errors
