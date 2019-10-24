@@ -15,3 +15,12 @@
 .responsive-img {
   padding-top: 30px;
 }
+#logo-container {
+  font-family: 'Lobster', 'Pacifico', 'Satisfy', cursive;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Prompt','Cuprum','Asap Condensed', sans-serif;
+}
+a {
+  color: black;
+}

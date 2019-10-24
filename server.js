@@ -64,6 +64,7 @@ app.get("/", function(req, res) {
   Article.find({"saved": false}, function(error, dataUnsaved) {
     Article.find().count({"saved": true}, function(err, dataSaved) {
       var hbsObject = {
+        title: "All Movie News",
         article: dataUnsaved,
         savedArticle: dataSaved
       };
@@ -77,6 +78,7 @@ app.get("/saved", function(req, res) {
   Article.find({"saved": true}).populate("notes").exec(function(error, articles) {
     Article.find().count({"saved": true}, function(err, dataSaved) {
       var hbsObject = {
+        title: "Saved News",
         article: articles,
         savedArticle: dataSaved,
       };

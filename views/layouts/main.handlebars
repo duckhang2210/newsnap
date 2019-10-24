@@ -6,35 +6,47 @@
   <title>Starter Template - Materialize</title>
 
   <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/css?family=Asap+Condensed|Cuprum|Lobster|Pacifico|Prompt|Satisfy&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
   <nav class="black lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Newsnap</a>
-      <ul class="right hide-on-med-and-down">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="/" class="center brand-logo">Newsnap</a>
+      <ul class="left">
         <li><a href="/saved">Saved News<span class="new badge teal" data-badge-caption="news">{{savedArticle}}</span></a></li>
       </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
+      <ul class="right">
+        <li><a href="https://github.com/duckhang2210/newsnap" target="blank"><i class="fab fa-github"></i></a></li>
       </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      
+      <h1 class="header center black-text">{{title}}</h1>
+      <div class="row center">
+        <a id="scrape" class="btn-large waves-effect waves-light black">Scrape News</a>
+        <a href="/delete" id="clear-button" class="btn-large waves-effect waves-light black">Clear News</a>
+      </div>
+      <br><br>
+    </div>
+  </div>
 
 
 
     {{{body}}}
 
 
-
+  <div id="back-to-top" class="fixed-action-btn hide">
+  <a class="btn-floating btn-large teal">
+    <i class="large material-icons">arrow_upward</i>
+  </a>
+  </div>
   <!--  Scripts-->
+  <script src="https://kit.fontawesome.com/16e7ff6190.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
