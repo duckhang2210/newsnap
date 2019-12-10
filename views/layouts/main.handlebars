@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Starter Template - Materialize</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Newsnap</title>
 
   <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/css?family=Asap+Condensed|Cuprum|Lobster|Pacifico|Prompt|Satisfy&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Asap+Condensed|Cuprum|Lobster|Pacifico|Prompt|Satisfy&display=swap"
+    rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
+
 <body>
   <nav class="black lighten-1" role="navigation">
     <div class="nav-wrapper container" id="navBar">
       <a id="logo-container" href="/" class="center brand-logo">Newsnap</a>
       <ul class="left ">
-        <li><a href="/saved">Saved News<span class="new badge teal" data-badge-caption="news">{{savedArticle}}</span></a></li>
+        <li><a href="/saved">Saved News<span class="new badge teal hide-on-small-only"
+              data-badge-caption="news">{{savedArticle}}</span></a></li>
       </ul>
       <ul class="right">
         <li><a href="https://github.com/duckhang2210/newsnap" target="blank"><i class="fab fa-github"></i></a></li>
@@ -37,13 +42,13 @@
 
 
 
-    {{{body}}}
+  {{{body}}}
 
 
   <div id="back-to-top" class="fixed-action-btn hide">
-  <a class="btn-floating btn-large teal">
-    <i class="large material-icons">arrow_upward</i>
-  </a>
+    <a class="btn-floating btn-large teal">
+      <i class="large material-icons">arrow_upward</i>
+    </a>
   </div>
   <!--  Scripts-->
   <script src="https://kit.fontawesome.com/16e7ff6190.js"></script>
@@ -51,5 +56,6 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
 
-  </body>
+</body>
+
 </html>
