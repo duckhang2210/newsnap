@@ -10,18 +10,9 @@ An app that scrapes articles from the CBR website and lets users save articles a
 - Comments can be added on saved articles by clicking the "Add a Note" button.
 - Saved articles can be deleted by clicking the "Delete" button.
 
-[Check out the App](https://boiling-castle-08359.herokuapp.com/)
+[Check out the App](https://ptyou-mern.herokuapp.com/)
 
 ## Technologies Used
-- Node.js
-- Express.js
-- Handlebars.js
-- MongoDB
-- Mongoose
-- npm packages
-    - body-parser
-    - express
-    - express-handlebars
-    - mongoose
-    - cheerio
-
+MERN-stack
+React-hooks
+Redux
